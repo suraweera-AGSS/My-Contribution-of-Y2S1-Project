@@ -1,4 +1,4 @@
-package cus_pay;
+package cus_reg;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
