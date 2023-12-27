@@ -1,0 +1,24 @@
+IT22339492
+A.G.S.S.Suraweera
+
+<Crud Operation>
+
+Customer Register
+Customer Profile
+Customer Details Update
+Delete Costomer Account
+
+<Additional Pages(There also Create and Read operations)>
+
+Customer Payment
+Payment Details
+
+
+**NOTE**
+
+	Run-:
+		CustomerRegister.jsp
+		CustomerPayment.jsp
+
+
+# THERE ONLY MY WORK INCLUDED IN THIS FILE
