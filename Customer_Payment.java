@@ -26,32 +26,32 @@ public class Customer_Payment extends HttpServlet {
 
         Connection connection = null;
 
-        try {
-            connection = DBUtil.getConnection();
-            PreparedStatement stmt;
-            String query = "INSERT INTO payment (holderName, paymentMethod, cardNumber, payDate, amount) VALUES (?, ?, ?, ?, ?)";
-            stmt = connection.prepareStatement(query);
-            stmt.setString(1, holderName);
-            stmt.setString(2, paymentMethod);
-            stmt.setString(3, cardNumber);
-            stmt.setString(4, payDate);
-            stmt.setString(5, amount);
-            int row = stmt.executeUpdate();
+        // try {
+        //     connection = DBUtil.getConnection();
+        //     PreparedStatement stmt;
+        //     String query = "INSERT INTO payment (holderName, paymentMethod, cardNumber, payDate, amount) VALUES (?, ?, ?, ?, ?)";
+        //     stmt = connection.prepareStatement(query);
+        //     stmt.setString(1, holderName);
+        //     stmt.setString(2, paymentMethod);
+        //     stmt.setString(3, cardNumber);
+        //     stmt.setString(4, payDate);
+        //     stmt.setString(5, amount);
+        //     int row = stmt.executeUpdate();
 
-            if (row > 0) {
-                System.out.println("Payment details added into database successfully...");
-                response.sendRedirect("payment_details.jsp?cardHolder=" + holderName +
-                        "&payment_method=" + paymentMethod +
-                        "&cardNumber=" + cardNumber +
-                        "&payDate=" + payDate +
-                        "&amount=" + amount);
-            } else {
-                System.out.println("Failed to add payment details into Database...");
-            }
+        //     if (row > 0) {
+        //         System.out.println("Payment details added into database successfully...");
+        //         response.sendRedirect("payment_details.jsp?cardHolder=" + holderName +
+        //                 "&payment_method=" + paymentMethod +
+        //                 "&cardNumber=" + cardNumber +
+        //                 "&payDate=" + payDate +
+        //                 "&amount=" + amount);
+        //     } else {
+        //         System.out.println("Failed to add payment details into Database...");
+        //     }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // } finally {
             DBUtil.closeConnection(connection);
         }
     }
