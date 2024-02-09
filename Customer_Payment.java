@@ -15,16 +15,14 @@ import cus_reg.DBUtil;
 @MultipartConfig
 public class Customer_Payment extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String holderName = request.getParameter("cardHolder");
         String paymentMethod = request.getParameter("payment_method");
         String cardNumber = request.getParameter("cardNumber");
         String payDate = request.getParameter("payDate");
         String amount = request.getParameter("amount");
-
+        
         Connection connection = null;
-
         try {
             connection = DBUtil.getConnection();
             PreparedStatement stmt;
