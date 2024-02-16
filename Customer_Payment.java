@@ -21,7 +21,6 @@ public class Customer_Payment extends HttpServlet {
         String cardNumber = request.getParameter("cardNumber");
         String payDate = request.getParameter("payDate");
         String amount = request.getParameter("amount");
-        
         Connection connection = null;
         try {
             connection = DBUtil.getConnection();
