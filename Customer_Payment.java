@@ -21,7 +21,9 @@ public class Customer_Payment extends HttpServlet {
         String cardNumber = request.getParameter("cardNumber");
         String payDate = request.getParameter("payDate");
         String amount = request.getParameter("amount");
+        
         Connection connection = null;
+        
         try {
             connection = DBUtil.getConnection();
             PreparedStatement stmt;
@@ -32,7 +34,9 @@ public class Customer_Payment extends HttpServlet {
             stmt.setString(3, cardNumber);
             stmt.setString(4, payDate);
             stmt.setString(5, amount);
+            
             int row = stmt.executeUpdate();
+            
             if (row > 0) {
                 System.out.println("Payment details added into database successfully...");
                 response.sendRedirect("payment_details.jsp?cardHolder=" + holderName +
@@ -43,6 +47,7 @@ public class Customer_Payment extends HttpServlet {
             } else {
                 System.out.println("Failed to add payment details into Database...");
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
